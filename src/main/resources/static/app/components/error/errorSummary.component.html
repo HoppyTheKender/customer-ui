@@ -1,0 +1,7 @@
+<div class="form-group" ng-if="$ctrl.errorSummary.length > 0" data-ng-class="{'has-error': $ctrl.errorSummary.length > 0}">
+	<div class="alert alert-danger" id="errors">
+		<ul ng-class="{'overflow-scroll short': $ctrl.scrollable}">
+			<li ng-repeat="error in $ctrl.errorSummary">{{error.message}}</li>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,65 @@
+<!-- App Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<a href="/customer-ui" class="navbar-brand"><img alt="Cloud Foundry" src="/customer-ui/images/cloud-foundry.png"></a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-left">
+				<li><a href="/${build.finalName}/">Configuration Lookup Service</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><p class="navbar-text">Style Guide</p></li>
+				<li><a href="#" ng-if="false">Sign Out</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<!-- Page Container -->
+<div class="container theme-showcase" role="main">
+
+	<!-- Intro and Helpful Links -->
+	<div class="jumbotron">
+		<h1>Style Guide</h1>
+		
+		<p>An overview of elements used in the application, how to use them, 
+		code snippets and more. This is a living document that should be 
+		updated when elements are added or changed.</p>
+		
+		<p>For UI Bootstrap-specific elements that are not included below, view 
+		the current <a href="https://angular-ui.github.io/bootstrap/" target="_blank">
+		UI Bootstrap documentation.</a></p>
+		
+		<p>For all other elements, view the current <a href="http://getbootstrap.com" target="_blank">
+		Bootstrap documentation</a>.</p>
+	</div>
+
+	<!-- Page Layout -->
+	<ng-include src="'app/styleguide/pageLayout.html'"></ng-include>
+            
+	<!-- Buttons -->
+	<ng-include src="'app/styleguide/buttons.html'"></ng-include>
+
+	<!-- Navigation -->
+	<ng-include src="'app/styleguide/navigation.html'"></ng-include>
+
+	<!-- Form Layout -->
+	<ng-include src="'app/styleguide/formLayout.html'"></ng-include>
+
+	<!-- Tables -->
+	<ng-include src="'app/styleguide/tables.html'"></ng-include>
+	
+	<!-- Badges -->
+	<ng-include src="'app/styleguide/badges.html'"></ng-include>
+	
+	<!-- Wells -->
+	<ng-include src="'app/styleguide/wells.html'"></ng-include>
+	
+	<!-- Errors and Alerts -->
+	<ng-include src="'app/styleguide/errorsAlerts.html'"></ng-include>
+	
+	<!-- List Groups -->	
+	<ng-include src="'app/styleguide/listGroups.html'"></ng-include>
+	
+</div>

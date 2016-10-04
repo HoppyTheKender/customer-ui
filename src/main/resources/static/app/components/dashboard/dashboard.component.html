@@ -1,0 +1,9 @@
+<div class="dashboard-component">
+	<div class="action-list">
+		<div class="action" ng-repeat="action in $ctrl.actions" ng-click="$ctrl.navigateToAction(action)">
+			<div class="action-icon"><i class="glyphicon" ng-class="::action.image"></i></div>
+			<div class="action-name">{{::action.name}}</div>
+			<div uib-popover="{{action.information}}" popover-trigger="mouseenter" popover-placement="bottom" tooltip-append-to-body="true" class="action-info" ng-if="action.information"><i class="glyphicon glyphicon-info-sign"></i></div>
+		</div>
+	</div>
+</div>

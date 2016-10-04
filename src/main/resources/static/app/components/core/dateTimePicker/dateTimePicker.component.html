@@ -1,0 +1,59 @@
+<div class="form-group" data-ng-class="{'has-error': $ctrl.dateTimeError}">
+	<label ng-if="$ctrl.dateLabel" ng-bind="$ctrl.dateLabel"></label>
+	<label>Date</label>
+	<div class="input-group">
+		<input type="text" class="form-control"
+			autofocus
+			uib-datepicker-popup 
+			ng-model="$ctrl.selectedDate" 
+			is-open="$ctrl.datePickerOpen"
+			datepicker-options="$ctrl.datePickerOptions"
+			ng-disabled="$ctrl.dateTimeDisabled"
+			ng-change="$ctrl.dateChanged()"
+			close-text="Close"
+			
+			data-tooltip-trigger="mouseenter focus" 
+			data-tooltip-append-to-body="true" 
+			data-uib-tooltip="{{$ctrl.dateTimeError}}" 
+			data-tooltip-placement="right" />
+		<span class="input-group-btn">
+			<button type="button" class="btn btn-default" ng-click="$ctrl.datePickerOpen = true" ng-disabled="$ctrl.dateTimeDisabled"><i class="glyphicon glyphicon-calendar"></i></button>
+		</span>
+	</div>
+</div>
+<div class="form-group" data-ng-class="{'has-error': $ctrl.dateTimeError}">
+	<label>Time</label>
+	<div class="input-group">
+		<input type="text" class="form-control"
+			datetime-picker="hh:mm:ss a"
+			ng-model="$ctrl.selectedTime"
+			is-open="$ctrl.timePickerOpen"
+			enable-date="false"
+			close-on-selection="true"
+			timepicker-options="$ctrl.timePickerOptions"
+			ng-disabled="$ctrl.dateTimeDisabled"
+			ng-change="$ctrl.dateChanged()"
+			
+			data-tooltip-trigger="mouseenter focus" 
+			data-tooltip-append-to-body="true" 
+			data-uib-tooltip="{{$ctrl.dateTimeError}}" 
+			data-tooltip-placement="right" />
+		<span class="input-group-btn">
+			<button type="button" class="btn btn-default" ng-click="$ctrl.timePickerOpen = true" ng-disabled="$ctrl.dateTimeDisabled"><i class="glyphicon glyphicon-time"></i></button>
+		</span>
+	</div>
+</div>
+<div class="form-group">
+	<label>Time Zone</label>
+	<select
+			class="form-control"
+			ng-model="$ctrl.selectedTimeZoneName"
+			ng-options="name for name in $ctrl.timeZoneNames"
+			ng-change="$ctrl.timeZoneChanged()"
+			ng-disabled="$ctrl.dateTimeDisabled"
+			
+			data-tooltip-trigger="mouseenter focus" 
+			data-tooltip-append-to-body="true" 
+			data-uib-tooltip="{{$ctrl.dateTimeError}}" 
+			data-tooltip-placement="right"></select>
+</div>

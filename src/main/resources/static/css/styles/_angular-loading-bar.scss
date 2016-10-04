@@ -1,0 +1,41 @@
+/* Loading Bar */
+$loading-bar-color: $fancy-purple;
+$loading-bar-top: 60px;
+
+#loading-bar {  
+  .bar {
+    z-index: 10;
+    position: absolute;
+    top: $loading-bar-top;
+    background: $loading-bar-color;
+  }
+  
+   .peg {
+    -moz-box-shadow: $loading-bar-color 1px 0 6px 1px;
+    -ms-box-shadow: $loading-bar-color 1px 0 6px 1px;
+    -webkit-box-shadow: $loading-bar-color 1px 0 6px 1px;
+    box-shadow: $loading-bar-color 1px 0 6px 1px;
+   }
+}
+
+#loading-bar-spinner {
+  top: $loading-bar-top + 10;
+  position: absolute;
+  
+  .spinner-icon {
+    border-top-color:  $fancy-purple;
+    border-left-color: $fancy-purple;
+  }
+}
+
+.scrolled-past-header {
+	#loading-bar .bar {
+		position: fixed;
+		top: 0;
+	}
+	
+	#loading-bar-spinner {
+		position: fixed;
+		top: 10px;
+	}
+}

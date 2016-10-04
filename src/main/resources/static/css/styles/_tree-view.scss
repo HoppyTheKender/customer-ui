@@ -1,0 +1,128 @@
+.angular-ui-tree {
+	border-top:2px solid $gray-light;
+	border-bottom:2px solid $gray-light;
+	padding:5px;
+	min-height:342px;
+	max-height:342px;
+	overflow:auto;
+}
+
+.angular-ui-tree-nodes {
+	$text-color: #000;
+	$background-color: $fancy-lightgray;
+	$border-color: #dae2ea;
+	$loader-base-line-height: 12px;
+	$loader-spin-duration: 1s;
+	
+	color: $text-color;
+	
+	.angular-ui-tree-placeholder {
+	    background: #f0f9ff;
+	    border: 2px dashed #bed2db;
+	    -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	    box-sizing: border-box;
+	}
+	
+	tr.angular-ui-tree-empty {
+	    height:100px
+	}
+	
+	.nodrop {
+	    background-color: #f2dede;
+	}
+	
+	.tree-node-content {
+		$line-height: 18px;
+		
+	    margin: 2px;
+	    overflow: auto;
+	    
+	    padding: 5px 8px;
+	    cursor: pointer;
+	    transition: all 0.3s;
+	    
+	    border: 1px solid transparent;
+	    
+	    .catalog-name {
+	    	padding-left:5px;
+	    }
+	    
+	    .catalog-action {
+	    	cursor: pointer;
+	    	font-size: 12px;
+	    	line-height: $line-height;
+	    	
+	    	
+	    	&.delete {
+	    		margin-top:1px; /* damn icon is aligned weird */
+	    	}
+	    	
+	    	&.angular-ui-tree-handle {
+	    		margin-right:0;
+	    		cursor:move;
+	    	}
+	    }
+	    
+	    .hover-actions {
+	    	opacity:0;
+	    	transition: opacity 0.3s;
+	    	.catalog-action {
+	    		margin-left: 10px;
+	    	}
+		}
+		
+		&:hover {
+			.hover-actions {
+				opacity:1;
+			}
+		}
+	    
+	    &.selected,
+	    &.selected:hover {
+			background-color: $fancy-purple;
+			border-color: darken($fancy-purple, 30%);
+			color: white;
+			transition: all 0.3s;
+		}
+	    
+	    &:not(.selected):hover {
+    		background: $gray-lighter;
+    		border-color: darken($gray-lighter, 30%);
+	    }
+	}
+	
+	.angular-ui-tree-placeholder {
+	    background: $gray-lighter;
+	    border: 2px dashed $gray-border;
+	    -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	    box-sizing: border-box;
+	}
+	
+	.angular-ui-tree-handle {
+		font-weight: normal;
+	}
+	
+	@keyframes spin {
+	  0% {
+	    transform: rotate(0deg);
+	  }
+	  100% {
+	    transform: rotate(360deg);
+	  }
+	}
+
+	.loading {
+	    border-radius: 50%;
+	    width: $loader-base-line-height;
+	    height: $loader-base-line-height;
+	    border: .25rem solid $text-color;
+	    border-top-color: white;
+	    animation: spin $loader-spin-duration infinite linear;
+	  &--double {
+	    border-style: double;
+	    border-width: .5rem;
+	  }
+	}
+}

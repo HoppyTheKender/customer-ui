@@ -1,0 +1,36 @@
+<div class="row col-md-12">
+   	<!-- Header -->
+   	<div class="page-header">
+   		<h1>Page Layout</h1>
+   	</div>
+   	
+   	<!-- Secondary Header -->
+   	<h3>Workflow Pages</h3>
+   	
+   	<!-- Description -->
+   	<p>
+    	When creating a page that's part of the wizard workflow, 
+    	there are classes that you can use to help make the pages 
+    	stay consistent in style. Use the <code>.select-options</code> 
+    	class for radio button options at the top. Use <code>.selected-form</code> 
+    	for the form elements. Use <code>.flow-nav</code> for the 
+    	navigation at the bottom of the page to get to the previous 
+    	and next pages. 
+	</p>
+	
+	<!-- Code Block -->
+	<pre>&lt;div class="col-md-12"&gt;&lt;h2&gt;Title of Page&lt;/h2&gt;&lt;/div&gt;
+&lt;div class="col-md-12 select-options"&gt;
+	&lt;label&gt;&lt;input type="radio" ng-model="$ctrl.selectedAction.action" value="..." ng-click="$ctrl.toggleSelectedActionOption()"&gt; Radio Option 1&lt;/label&gt;&lt;br/&gt;
+	&lt;label&gt;&lt;input type="radio" ng-model="$ctrl.selectedAction.action" value="..." ng-click="$ctrl.toggleSelectedActionOption()"&gt; Radio Option 2&lt;/label&gt;&lt;br/&gt;
+	&lt;label&gt;&lt;input type="radio" ng-model="$ctrl.selectedAction.action" value="..." ng-click="$ctrl.toggleSelectedActionOption()"&gt; Radio Option 3&lt;/label&gt;&lt;br/&gt;
+&lt;/div&gt;
+&lt;div class="col-md-12 selected-form"&gt;
+	&lt;error-summary errors="$ctrl.errors"&gt;&lt;/error-summary&gt;
+	...
+	...
+&lt;/div&gt;
+&lt;div class="col-md-12 flow-nav"&gt;
+	&lt;flow-navigation can-show-next="$ctrl.canShowNext" next="$ctrl.next()" can-show-prev="$ctrl.canShowPrev" prev="$ctrl.prev()"&gt;&lt;/flow-navigation&gt;
+&lt;/div&gt;</pre>
+</div>
