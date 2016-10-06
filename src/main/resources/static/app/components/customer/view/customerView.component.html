@@ -1,28 +1,37 @@
 <div class="col-md-12">
 	<h2>View Customers</h2>
 	<div class="row">
-		
+		<div class="col-md-8">
+			<div class="form-group">
+				<div class="input-group">
+					<input placeholder="Filter on any column..." type="text" class="form-control" data-ng-model="$ctrl.model.customerFilter" />
+					<span class="input-group-addon"><i class="glyphicon glyphicon-filter"></i></span>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<button class="btn btn-primary pull-right" data-ng-click="$ctrl.addCustomer()">Add Customer</button>
+		</div>
 	</div>
 </div>
 <div class="col-md-12">
 	<table class="table table-striped table-hover table-scroll">
 		<thead>
 			<tr>
-				<th class="col-md-1">ID</th>
-				<th class="col-md-2">First Name</th>
-				<th class="col-md-3">Last Name</th>
+				<th class="col-md-3">First Name</th>
+				<th class="col-md-4">Last Name</th>
 				<th class="col-md-4">Email</th>
 				<th class="col-md-1">&nbsp;</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr data-ng-repeat="customer in $ctrl.model.customers">
-				<td class="col-md-1">{{customer.id}}</td>
-				<td class="col-md-2">{{customer.firstName}}</td>
-				<td class="col-md-3">{{customer.lastName}}</td>
+			<tr data-ng-repeat="customer in $ctrl.model.customers | filter:$ctrl.model.customerFilter">
+				<td class="col-md-3">{{customer.firstName}}</td>
+				<td class="col-md-4">{{customer.lastName}}</td>
 				<td class="col-md-4">{{customer.email}}</td>
 				<td class="col-md-1">
-					&nbsp;
+					<i class="catalog-action glyphicon glyphicon-pencil customer-action"  ng-click="$ctrl.editCustomer(customer, $index)" title="Edit Customer"></i>
+					<i class="glyphicon glyphicon-remove customer-action" ng-click="$ctrl.deleteCustomer(customer);" title="Delete Customer"></i>
 				</td>
 			</tr>
 		</tbody>

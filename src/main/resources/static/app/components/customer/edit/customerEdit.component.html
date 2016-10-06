@@ -1,0 +1,13 @@
+	<error-summary errors="$ctrl.errors"></error-summary>
+	<div class="form-group" data-ng-class="{'has-error': $ctrl.errors.firstName}">
+		<label class="control-label" for="firstName">First Name</label>
+		<input type="text" class="form-control" id="firstName" placeholder="First Name" data-ng-model="$ctrl.model.firstName" data-tooltip-trigger="mouseenter focus" data-tooltip-append-to-body="true" data-uib-tooltip="{{$ctrl.errors.firstName}}" data-tooltip-placement="right">
+ 	</div>
+ 	<div class="form-group" data-ng-class="{'has-error': $ctrl.errors.lastName}">
+		<label class="control-label" for="lastName">Last Name</label>
+		<input type="text" class="form-control" id="lastName" placeholder="Last Name" data-ng-model="$ctrl.model.lastName" data-tooltip-trigger="mouseenter focus" data-tooltip-append-to-body="true" data-uib-tooltip="{{$ctrl.errors.lastName}}" data-tooltip-placement="right">
+ 	</div>
+ 	<div class="form-group" data-ng-class="{'has-error': $ctrl.errors.lastName}">
+		<label class="control-label" for="lastName">Last Name</label>
+		<input type="email" class="form-control" id="email" placeholder="Email" data-ng-model="$ctrl.model.email" data-tooltip-trigger="mouseenter focus" data-tooltip-append-to-body="true" data-uib-tooltip="{{$ctrl.errors.email}}" data-tooltip-placement="right">
+ 	</div>
