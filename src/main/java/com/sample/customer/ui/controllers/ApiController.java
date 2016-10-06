@@ -53,9 +53,6 @@ public class ApiController {
 	@RequestMapping("/api/**")
 	public @ResponseBody ResponseEntity<Object> proxyApi(@RequestBody(required = false) Object body, HttpMethod method, HttpServletRequest request) {
 		
-		System.setProperty("proxyHost", "internet.proxy.fedex.com");
-		System.setProperty("proxyPort", "3128");
-		
 		Object augmentedBody = body;
 		String augmentedQueryString = request.getQueryString();
 		try {
