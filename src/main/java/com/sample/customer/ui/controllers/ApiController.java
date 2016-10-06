@@ -25,7 +25,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
 public class ApiController {
-	private static final String CLS_UI_REST_API_EXCEPTION_MESSAGE = "An exception occurred calling the CLS UI REST API.";
+	private static final String CUSTOMER_UI_REST_API_EXCEPTION_MESSAGE = "An exception occurred calling the Customer UI REST API.";
 
 	protected static final String API_PREFIX = "/api/";
 	protected static final Integer API_PREFIX_LENGTH = API_PREFIX.length();
@@ -64,12 +64,12 @@ public class ApiController {
 			String url = generateUrl(request, augmentedQueryString);
 			return apiRestTemplate.exchange(URI.create(url), method, new HttpEntity<>(augmentedBody), Object.class);
 		} catch (HttpStatusCodeException e) {
-			logger.error(CLS_UI_REST_API_EXCEPTION_MESSAGE, e);
+			logger.error(CUSTOMER_UI_REST_API_EXCEPTION_MESSAGE, e);
 
 			Object errorObject = getErrorObject(e);
 			return new ResponseEntity<>(errorObject, e.getStatusCode());
 		} catch (Exception e) {
-			logger.error(CLS_UI_REST_API_EXCEPTION_MESSAGE, e);
+			logger.error(CUSTOMER_UI_REST_API_EXCEPTION_MESSAGE, e);
 
 			Object response = e.getMessage().getBytes();
 			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);

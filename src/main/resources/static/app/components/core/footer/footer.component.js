@@ -12,7 +12,7 @@
 		var $ctrl = this;
 		
 		this.$onInit = function () {
-			this.version = '${application.version}';
+			this.version = '${version}';
 			
 		};
 	}
