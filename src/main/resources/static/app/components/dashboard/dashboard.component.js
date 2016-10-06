@@ -11,7 +11,8 @@
 	function DashboardController($state) {
 		this.$onInit = function () {
 			this.actions = [
-     		    {name: 'MyAction', type: 'link', image: 'glyphicon-cog', route: 'app.home', information: 'Testing adding a button to dashboard.' }
+     		    {name: 'Add Customer', type: 'link', image: 'glyphicon-plus', route: 'app.customerAdd', information: 'Add Customer Record.' },
+     		    {name: 'View Customers', type: 'link', image: 'glyphicon-list', route: 'app.customerView', information: 'View Customer Records.' }
              ];
      		
      		// Exposed
@@ -25,7 +26,8 @@
 		};
 		
 		// Internal  
-		function _navigateToAction(action) {
+		function _navigateToAction(action) {			
+			
 			switch (action.type) {
 				case 'workflow':
 					action.workflow.nextState();
