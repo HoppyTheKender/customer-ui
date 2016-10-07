@@ -5,15 +5,17 @@
 
 	module.component('footer', {
 		templateUrl: 'app/components/core/footer/footer.component.html',
-		controller: ['$state', FooterController]
+		controller: ['$state', 'propertiesDataService', FooterController]
 	});
 
-	function FooterController($state, EnvironmentService) {
+	function FooterController($state, propertiesDataService) {
 		var $ctrl = this;
 		
 		this.$onInit = function () {
-			this.version = '${version}';
 			
+			propertiesDataService.getApplicationVersion().then(function (applicationVersion) {
+				$ctrl.version = applicationVersion;
+			});
 		};
 	}
 })();

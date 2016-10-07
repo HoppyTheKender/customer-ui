@@ -1,8 +1,10 @@
 package com.sample.customer.ui;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -20,14 +22,22 @@ public class AngularCloudApplicationTests {
 	@Autowired
 	public RestTemplate apiRestTemplate;
 
+	@Value("${application.version}")
+	public String applicationVersion;
+
 	@Test
 	public void restTemplate_canCallCFRestService_validCall() {
 		Object augmentedBody = null;
-		
+
 		System.setProperty("proxyHost", "internet.proxy.fedex.com");
 		System.setProperty("proxyPort", "3128");
 
 		apiRestTemplate.exchange("http://customer-api.cfapps.io/customer", HttpMethod.GET, new HttpEntity<>(augmentedBody), Object.class);
+	}
+
+	@Test
+	public void applicatonVersionExists() {
+		Assert.assertNotNull(applicationVersion);
 	}
 
 }
