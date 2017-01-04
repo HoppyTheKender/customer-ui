@@ -1,0 +1,6 @@
+---
+applications:
+- name: customer-ui
+  memory: 512M
+  disk_quota: 512M
+  instances: 1
